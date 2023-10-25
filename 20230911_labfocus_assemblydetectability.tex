@@ -439,6 +439,7 @@ sorting=nyt]{biblatex}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %% references
+\section{References}
 \setbeamertemplate{bibliography item}{}  %% remove document icon
 \begin{frame}[t,plain,allowframebreaks]  
   \frametitle{References}
@@ -447,6 +448,7 @@ sorting=nyt]{biblatex}
   \printbibliography
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Appendix}
 \begin{frame}[t,plain]
   \begin{center}
     \vspace*{\fill}
@@ -461,7 +463,7 @@ sorting=nyt]{biblatex}
   \frametitle{\ttl}
   \parbox{\linewidth}{
     \includegraphics[width=\linewidth]{./figures/minimal_model_stats_3d.pdf}\\
-    {\small\input{./figures/minimal_model_stats_3d_caption.tex}}
+    {\footnotesize\input{./figures/minimal_model_stats_3d_caption.tex}}
   }
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -469,16 +471,29 @@ sorting=nyt]{biblatex}
 \subsection{\ttl}
 \begin{frame}[plain]
   \frametitle{\ttl}
-  \parbox{\linewidth}{
-    \includegraphics[width=\linewidth]{./figures/minimal_model_assembly_detectability_rho_2100.pdf}\\
-    {\small\input{./figures/minimal_model_assembly_detectability_rho_2100_caption.tex}}
+  \vspace*{-1ex}
+  \begin{itemize}
+  \item definition: an assembly is \emph{detected} if at least two of its neurons are detected
+  \item single-assembly detection probability:
+    \begin{equation*}
+      P_1(q,M) = 1 - p(k=0) - p(k=1) = 1 - (1-q)^M - M q (1-q)^{M-1}.
+    \end{equation*}
+  \item probability of observing at least one assembly within an ensemble of $A$ assemblies:
+    \begin{equation*}
+      P_A = 1 - (1-P_1)^A.
+    \end{equation*}
+  \end{itemize}
+  \only<1>{
+    \parbox{\linewidth}{
+      \includegraphics[width=0.9\linewidth]{./figures/minimal_model_assembly_detectability_rho_2100.pdf}\\
+      {\footnotesize\input{./figures/minimal_model_assembly_detectability_rho_2100_caption.tex}}
+    }
   }
-\end{frame}
-\begin{frame}[plain]
-  \frametitle{\ttl}
-  \parbox{\linewidth}{
-    \includegraphics[width=\linewidth]{./figures/minimal_model_assembly_detectability_rho_35000.pdf}\\
-    {\small\input{./figures/minimal_model_assembly_detectability_rho_35000_caption.tex}}
+  \only<2->{
+    \parbox{\linewidth}{
+      \includegraphics[width=0.9\linewidth]{./figures/minimal_model_assembly_detectability_rho_35000.pdf}\\
+      {\footnotesize\input{./figures/minimal_model_assembly_detectability_rho_35000_caption.tex}}
+    }
   }
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
